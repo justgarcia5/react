@@ -21,6 +21,8 @@ const App = props => {
         { name: newName, age: 28 },
         { name: 'Jordan', age: 28 },
         { name: 'Jesus', age: 34 }
+        { name: 'Jesus', age: 34 }
+
       ],
     })
     setOtherState("this is a new value!")
