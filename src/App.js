@@ -52,6 +52,7 @@ class App extends Component {
       cursor: 'pointer'
     }
 
+
     let persons = true
 
     if(this.state.showPersons) {
