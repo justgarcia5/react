@@ -45,11 +45,7 @@ class App extends Component {
       padding: '8px',
       cursor: 'pointer'
     }
-    return (
-      <div className="App">
-        <h1>Hi! I am a React App</h1>
-        <p>This is really working!!</p>
-        <button style={style} onClick={this.nameSwitchHandler}>Switch Name</button>
+    if(this.state.showPersons) {
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
