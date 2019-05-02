@@ -49,30 +49,23 @@ class App extends Component {
       font: 'ingerit',
       border: '2px solid black',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      borderRadius: '7px',
     }
-
 
     let persons = true
 
     if(this.state.showPersons) {
-      persons =
-      <div >
-        <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-        />
-        <Person
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-          // click={nameHandler}
-          change={this.nameChangeHandler} >Hobbies: Hiking
-        </Person>
-        <Person
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age}
-        />
-      </div>
+      persons = (
+        <div>
+          {this.state.persons.map(person => {
+            return <Person
+              name={persons.name}
+              age={persons.age}
+            />
+          })}
+        </div>
+      )
     }
 
     return (
