@@ -40,7 +40,6 @@ class App extends Component {
     this.setState({
       persons: persons
     })
-    console.log(persons, id)
   }
 
   togglePersonsHandler = () => {
@@ -52,10 +51,11 @@ class App extends Component {
     const style = {
       backgroundColor: 'silver',
       font: 'ingerit',
-      border: '2px solid black',
+      border: '1px solid black',
       padding: '8px',
       cursor: 'pointer',
-      borderRadius: '7px',
+      borderRadius: '2px',
+      fontSize: '19px',
     }
 
     let persons = true
@@ -80,7 +80,7 @@ class App extends Component {
       <div className="App">
         <h1>Hi! I am a React App</h1>
         <p>This is really working!!</p>
-        <button style={style} onClick={this.togglePersonsHandler}>Switch Name</button>
+        <button style={style} onClick={this.togglePersonsHandler}>Show persons</button>
         {persons}
       </div>
     );

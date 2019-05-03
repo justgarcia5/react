@@ -1,7 +1,24 @@
 .Person {
-  width: 60%;
-  margin: 16px auto;
-  border: 1px solid #eee;
-  padding: 16px;
+  width: 40%;
+  margin: 30px auto;
+  border: 1px solid black;
+  padding: 10px;
   text-align: center;
+  box-shadow: 10px 5px 10px 5px;
+}
+
+input {
+  padding: 10px;
+  font-size: 15px;
+}
+
+button {
+  background-color: silver;
+  font: ingerit;
+  border: 1px solid black;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 15px;
+  margin: 10px auto;
 }
