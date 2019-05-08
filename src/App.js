@@ -49,13 +49,14 @@ class App extends Component {
 
   render () {
     const style = {
-      backgroundColor: 'silver',
+      backgroundColor: 'green',
       font: 'ingerit',
       border: '1px solid black',
       padding: '8px',
       cursor: 'pointer',
       borderRadius: '2px',
       fontSize: '19px',
+      color: 'white'
     }
 
     let persons = true
@@ -74,7 +75,10 @@ class App extends Component {
           })}
         </div>
       )
+      style.backgroundColor = 'red';
     }
+
+
 
     return (
       <div className="App">
