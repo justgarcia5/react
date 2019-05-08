@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Radium, { StyleRoot } from 'radium'
+import Radium, { StyleRoot } from 'radium'
 
 import Person from './Person/Person';
 
@@ -27,7 +27,7 @@ class App extends Component {
   nameChangeHandler = (event, id) => {
     // console.log('was clicked')
     const personIndex = this.state.persons.findIndex(person => {
-      return person.id === id;
+      return person.userId === id;
     })
 
     const person = {
@@ -59,6 +59,10 @@ class App extends Component {
       borderRadius: '2px',
       fontSize: '19px',
       color: 'white',
+      ':hover' : {
+        backgroundColor: 'lightgreen',
+        color: 'black'
+      }
     }
 
     let persons = true
@@ -78,6 +82,10 @@ class App extends Component {
         </div>
       )
       style.backgroundColor = 'red';
+      style[':hover'] = {
+        backgroundColor: 'salmon',
+        color: 'black'
+      }
     }
 
     const classes = [];
@@ -90,15 +98,17 @@ class App extends Component {
     // console.log(classes)
 
     return (
-      <div className="App">
-        <h1>Hi! I am a React App</h1>
-        <p className={classes.join(' ')}>This is really working!!</p>
-        <button style={style} onClick={this.togglePersonsHandler}>Show persons</button>
-        {persons}
-      </div>
+      <StyleRoot>
+        <div className="App">
+          <h1>Hi! I am a React App</h1>
+          <p className={classes.join(' ')}>This is really working!!</p>
+          <button style={style} onClick={this.togglePersonsHandler}>Show persons</button>
+          {persons}
+        </div>
+      </StyleRoot>
     );
   // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Hello! I am a React App'))
   }
 }
 
-export default App;
+export default Radium(App);
