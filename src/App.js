@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium from 'radium'
+import Radium, { StyleRoot } from 'radium'
 
 import Person from './Person/Person';
 
@@ -52,7 +52,7 @@ class App extends Component {
   render () {
     const style = {
       backgroundColor: 'green',
-      font: 'ingerit',
+      fontFamily: 'ingerit',
       border: '1px solid black',
       padding: '8px',
       cursor: 'pointer',
@@ -95,15 +95,17 @@ class App extends Component {
     if (this.state.persons.length <= 1) {
       classes.push('bold')
     }
-    console.log(classes)
+    // console.log(classes)
 
     return (
-      <div className="App">
-        <h1>Hi! I am a React App</h1>
-        <p className={classes.join(' ')}>This is really working!!</p>
-        <button style={style} onClick={this.togglePersonsHandler}>Show persons</button>
-        {persons}
-      </div>
+      <StyleRoot>
+        <div className="App">
+          <h1>Hi! I am a React App</h1>
+          <p className={classes.join(' ')}>This is really working!!</p>
+          <button style={style} onClick={this.togglePersonsHandler}>Show persons</button>
+          {persons}
+        </div>
+      </StyleRoot>
     );
   // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Hello! I am a React App'))
   }
